@@ -6,10 +6,11 @@
 
 @push('scripts')
     @vite(['resources/js/admin/pages/users/users.js'])
-    {{-- let route_delete_user = "{{ route('admin.deleteUser') }}";
+    {{-- 
     let route_create_user = "{{ route('admin.createUser') }}"; --}}
     <script>
         let route_edit_user = "{{ route('admin.editUser') }}";
+        let route_delete_user = "{{ route('admin.deleteUser') }}";
     </script>
 @endpush
 

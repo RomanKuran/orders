@@ -26,6 +26,15 @@ $(document).ready(function (e) {
         editUser(user_id, field_name, value);
     });
     // ----
+
+    // event delete user
+    $(document).on('click', '.js-delete-user', function () {
+        let field = $(this);
+        let user_id = field.parents('tr').attr('data-user-id');
+
+        deleteUser(user_id);
+    });
+    // ----
 })
 
 // function edit user
@@ -47,6 +56,26 @@ function editUser(user_id, field_name, value) {
             alert(result.responseJSON.message);
         }
 
+    });
+}
+// ----
+
+// function delete user
+function deleteUser(user_id) {
+    $.ajax({
+        type: "DELETE",
+        url: route_delete_user,
+        dataType: 'json',
+        data: {
+            user_id: user_id,
+            _token: $('meta[name="csrf-token"]').attr('content')
+        },
+        success: function (result) {
+            $(`tr[data-user-id=${user_id}]`).remove();
+        },
+        error: function (result) {
+            alert(result.responseJSON.message);
+        }
     });
 }
 // ----
