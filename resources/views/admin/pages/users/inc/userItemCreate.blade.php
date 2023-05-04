@@ -9,7 +9,7 @@
         <input class="js-create-user-field user-field" type="text" name="email">
     </td>
     <td>
-        <input type="checkbox" name="is_admin" value="0">
+        <input class="js-create-user-field-checkbox" type="checkbox" name="is_admin" value="0">
     </td>
     <td>
         <button class="js-create-user">{{ __('Create') }}</button>

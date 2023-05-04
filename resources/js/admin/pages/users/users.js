@@ -35,7 +35,39 @@ $(document).ready(function (e) {
         deleteUser(user_id);
     });
     // ----
+
+    // event create user
+    $(document).on('click', '.js-create-user', function () {
+        let name = $('.js-create-user-field[name="name"]').val();
+        let email = $('.js-create-user-field[name="email"]').val();
+        let is_admin = $('.js-create-user-field-checkbox[name="is_admin"]').is(':checked') ? 1 : 0;
+
+        createUser(name, email, is_admin);
+    });
+    // ----
 })
+
+// function create user
+function createUser(name, email, is_admin) {
+    $.ajax({
+        type: "post",
+        url: route_create_user,
+        dataType: 'json',
+        data: {
+            name: name,
+            email: email,
+            is_admin: is_admin,
+            _token: $('meta[name="csrf-token"]').attr('content')
+        },
+        success: function (result) {
+            location.reload();
+        },
+        error: function (result) {
+            alert(result.responseJSON.message);
+        }
+    });
+}
+// ----
 
 // function edit user
 function editUser(user_id, field_name, value) {

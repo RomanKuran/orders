@@ -9,6 +9,7 @@ use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
 use Laravel\Sanctum\HasApiTokens;
+use Illuminate\Support\Facades\Hash;
 
 class User extends Authenticatable
 {
@@ -48,6 +49,16 @@ class User extends Authenticatable
     public function isAdmin()
     {
         return $this->is_admin == 1;
+    }
+
+    public static function createUser($data)
+    {
+        return User::create([
+            'name' => $data['name'],
+            'email' => $data['email'],
+            'password' => Hash::make($data['password']),
+            'is_admin' => isset($data['is_admin']) ? $data['is_admin'] : false,
+        ]);
     }
 
     public static function edit($userId, $fieldName, $value)
