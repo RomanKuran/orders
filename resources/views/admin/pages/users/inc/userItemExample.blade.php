@@ -8,7 +8,7 @@
         <input class="js-edit-user-field user-field" type="text" name="email" value="" disabled>
     </td>
     <td class="js-container-user-field" name="is_admin">
-        <input type="checkbox" name="is_admin" value="0">
+        <input class="js-edit-user-field-checkbox" type="checkbox" name="is_admin" value="0">
     </td>
     <td>
         <button class="js-delete-user">{{ __('Delete') }}</button>

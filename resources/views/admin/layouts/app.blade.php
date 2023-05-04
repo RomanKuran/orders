@@ -17,21 +17,24 @@
     <!-- Scripts -->
     @vite(['resources/sass/app.scss', 'resources/js/app.js'])
 
-    
+
 
     @stack('styles')
     <link href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.0.0-alpha/css/bootstrap.css"
-    rel="stylesheet">
+        rel="stylesheet">
 </head>
 
 <body>
     <div id="app">
-        @include('inc.navbar')
+        @include('admin.inc.navbar')
 
         <main class="py-4">
             @yield('content')
         </main>
     </div>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+    @stack('scripts')
 </body>
 
 </html>

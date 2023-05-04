@@ -3,6 +3,8 @@
 namespace App\Models;
 
 // use Illuminate\Contracts\Auth\MustVerifyEmail;
+
+use App\Http\Requests\Admin\Pages\Users\EditUserRequest;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
@@ -46,5 +48,12 @@ class User extends Authenticatable
     public function isAdmin()
     {
         return $this->is_admin == 1;
+    }
+
+    public static function edit($userId, $fieldName, $value)
+    {
+        return User::where('id', $userId)->update([
+            $fieldName => $value,
+        ]);
     }
 }

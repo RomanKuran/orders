@@ -9,7 +9,7 @@
         <input class="js-edit-user-field user-field" type="text" name="email" value="{{ $user->email }}" disabled>
     </td>
     <td class="js-container-user-field" name="is_admin">
-        <input type="checkbox" name="is_admin" value="{{ $user->is_admin }}" {{ $user->is_admin ? 'checked' : '' }}>
+        <input class="js-edit-user-field-checkbox" type="checkbox" name="is_admin" value="{{ $user->is_admin }}" {{ $user->is_admin ? 'checked' : '' }}>
     </td>
     <td>
         <button class="js-delete-user">{{ __('Delete') }}</button>
