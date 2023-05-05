@@ -13,4 +13,11 @@ class Service extends Model
         'name',
         'price',
     ];
+
+    public static function edit($serviceId, $fieldName, $value)
+    {
+        return Service::where('id', $serviceId)->update([
+            $fieldName => $value,
+        ]);
+    }
 }

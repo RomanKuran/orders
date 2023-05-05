@@ -8,3 +8,4 @@ Route::delete('/users/delete',  [App\Http\Controllers\Admin\Pages\Users\Delete\D
 Route::post('/users/create',  [App\Http\Controllers\Admin\Pages\Users\Create\CreateUserController::class, 'create'])->name('admin.createUser');
 
 Route::get('/services',  [App\Http\Controllers\Admin\Pages\Services\ServicesController::class, 'services'])->name('admin.services');
+Route::put('/services/edit',  [App\Http\Controllers\Admin\Pages\Services\Edit\EditServiceController::class, 'edit'])->name('admin.editService');

@@ -1,17 +1,11 @@
 @extends('admin.layouts.app')
 
-@push('styles')
-    {{-- @vite(['resources/sass/admin/pages/users/users.scss']) --}}
-@endpush
-
 @push('scripts')
-    {{-- @vite(['resources/js/admin/pages/users/users.js']) --}}
+    @vite(['resources/js/admin/pages/services/services.js'])
 
-    {{-- <script>
-        let route_edit_user = "{{ route('admin.editUser') }}";
-        let route_delete_user = "{{ route('admin.deleteUser') }}";
-        let route_create_user = "{{ route('admin.createUser') }}";
-    </script> --}}
+    <script>
+        let route_edit_service = "{{ route('admin.editService') }}";
+    </script>
 @endpush
 
 @section('content')

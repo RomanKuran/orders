@@ -1,10 +1,4 @@
 $(document).ready(function (e) {
-    // enabled user field
-    $(document).on('dblclick', '.js-edit-user-field', function (e) {
-        $(this).removeAttr("disabled");
-    });
-    // ----
-
     // event edit user
     $(document).on('focusout', '.js-edit-user-field', function () {
         let user = $(this);
