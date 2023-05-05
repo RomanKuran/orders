@@ -5,6 +5,8 @@
 
     <script>
         let route_edit_service = "{{ route('admin.editService') }}";
+        let route_delete_service = "{{ route('admin.deleteService') }}";
+
     </script>
 @endpush
 

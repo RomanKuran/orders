@@ -10,6 +10,15 @@ $(document).ready(function (e) {
         editService(service_id, field_name, value);
     });
     // ----
+
+    // event delete service
+    $(document).on('click', '.js-delete-service', function () {
+        let field = $(this);
+        let service_id = field.parents('tr').attr('data-service-id');
+
+        deleteService(service_id);
+    });
+    // ----
 })
 
 // function edit service
@@ -31,6 +40,26 @@ function editService(service_id, field_name, value) {
             alert(result.responseJSON.message);
         }
 
+    });
+}
+// ----
+
+// function delete service
+function deleteService(service_id) {
+    $.ajax({
+        type: "DELETE",
+        url: route_delete_service,
+        dataType: 'json',
+        data: {
+            service_id: service_id,
+            _token: $('meta[name="csrf-token"]').attr('content')
+        },
+        success: function (result) {
+            $(`tr[data-service-id=${service_id}]`).remove();
+        },
+        error: function (result) {
+            alert(result.responseJSON.message);
+        }
     });
 }
 // ----
