@@ -9,7 +9,7 @@ class Service extends Model
 {
     use HasFactory;
 
-    protected $hidden = [
+    protected $fillable = [
         'name',
         'price',
     ];
@@ -18,6 +18,14 @@ class Service extends Model
     {
         return Service::where('id', $serviceId)->update([
             $fieldName => $value,
+        ]);
+    }
+
+    public static function createService($name, $price)
+    {
+        return Service::create([
+            'name' => $name,
+            'price' => $price
         ]);
     }
 }

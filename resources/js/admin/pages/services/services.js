@@ -19,7 +19,37 @@ $(document).ready(function (e) {
         deleteService(service_id);
     });
     // ----
+
+    // event create service
+    $(document).on('click', '.js-create-service', function () {
+        let name = $('.js-create-service-field[name="name"]').val();
+        let price = $('.js-create-service-field[name="price"]').val();
+
+        createService(name, price);
+    });
+    // ----
 })
+
+// function create service
+function createService(name, price) {
+    $.ajax({
+        type: "post",
+        url: route_create_service,
+        dataType: 'json',
+        data: {
+            name: name,
+            price: price,
+            _token: $('meta[name="csrf-token"]').attr('content')
+        },
+        success: function (result) {
+            location.reload();
+        },
+        error: function (result) {
+            alert(result.responseJSON.message);
+        }
+    });
+}
+// ----
 
 // function edit service
 function editService(service_id, field_name, value) {

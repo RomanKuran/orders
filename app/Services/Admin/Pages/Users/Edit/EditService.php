@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Services\Admin\Users\Edit;
+namespace App\Services\Admin\Pages\Users\Edit;
 
 use App\Models\User;
 

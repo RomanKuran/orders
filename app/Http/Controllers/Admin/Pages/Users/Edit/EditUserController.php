@@ -4,7 +4,7 @@ namespace App\Http\Controllers\Admin\Pages\Users\Edit;
 
 use App\Http\Controllers\Controller;
 use App\Http\Requests\Admin\Pages\Users\EditUserRequest;
-use App\Services\Admin\Users\Edit\EditService;
+use App\Services\Admin\Pages\Users\Edit\EditService;
 
 class EditUserController extends Controller
 {

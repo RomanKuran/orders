@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Services\Admin\Users\Delete;
+namespace App\Services\Admin\Pages\Users\Delete;
 
 use App\Models\User;
 

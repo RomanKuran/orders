@@ -4,7 +4,7 @@ namespace App\Http\Controllers\Admin\Pages\Users\Delete;
 
 use App\Http\Controllers\Controller;
 use App\Http\Requests\Admin\Pages\Users\DeleteUserRequest;
-use App\Services\Admin\Users\Delete\DeleteService;
+use App\Services\Admin\Pages\Users\Delete\DeleteService;
 
 class DeleteUserController extends Controller
 {

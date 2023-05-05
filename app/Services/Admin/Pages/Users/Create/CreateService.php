@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Services\Admin\Users\Create;
+namespace App\Services\Admin\Pages\Users\Create;
 
 use App\Models\User;
 use Illuminate\Support\Str;
