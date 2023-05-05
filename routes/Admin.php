@@ -6,3 +6,5 @@ Route::get('/users',  [App\Http\Controllers\Admin\Pages\Users\UsersController::c
 Route::put('/users/edit',  [App\Http\Controllers\Admin\Pages\Users\Edit\EditUserController::class, 'edit'])->name('admin.editUser');
 Route::delete('/users/delete',  [App\Http\Controllers\Admin\Pages\Users\Delete\DeleteUserController::class, 'delete'])->name('admin.deleteUser');
 Route::post('/users/create',  [App\Http\Controllers\Admin\Pages\Users\Create\CreateUserController::class, 'create'])->name('admin.createUser');
+
+Route::get('/services',  [App\Http\Controllers\Admin\Pages\Services\ServicesController::class, 'services'])->name('admin.services');

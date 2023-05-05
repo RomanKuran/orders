@@ -50,6 +50,10 @@
                             <a class="dropdown-item" href="{{ route('admin.users') }}">
                                 {{ __('Users') }}
                             </a>
+
+                            <a class="dropdown-item" href="{{ route('admin.services') }}">
+                                {{ __('Services') }}
+                            </a>
                         </div>
                     </li>
                 @endguest
