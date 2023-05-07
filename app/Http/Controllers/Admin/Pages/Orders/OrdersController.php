@@ -23,7 +23,8 @@ class OrdersController extends Controller
     public function orders($userId, $status = null)
     {
         $orders = OrdersService::orders($userId);
+        $statuses = Order::$statuses;
 
-        return view('admin.pages.orders.orders', compact('orders'));
+        return view('admin.pages.orders.orders', compact('orders', 'statuses'));
     }
 }

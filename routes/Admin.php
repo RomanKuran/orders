@@ -13,3 +13,4 @@ Route::delete('/services/delete',  [App\Http\Controllers\Admin\Pages\Services\De
 Route::post('/services/create',  [App\Http\Controllers\Admin\Pages\Services\Create\CreateServiceController::class, 'create'])->name('admin.createService');
 
 Route::get('/orders/{userId}/{status?}',  [App\Http\Controllers\Admin\Pages\Orders\OrdersController::class, 'orders'])->name('admin.orders');
+Route::put('/orders/edit',  [App\Http\Controllers\Admin\Pages\Orders\Edit\EditOrderController::class, 'edit'])->name('admin.editOrder');

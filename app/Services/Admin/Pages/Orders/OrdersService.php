@@ -9,7 +9,7 @@ class OrdersService
     public static function orders($userId)
     {
         $user = User::where('id', $userId)->first();
-        $orders = $user->services()->with('order')->paginate(10);
+        $orders = $user->services()->orderBy('id', 'DESC')->with('order')->paginate(10);
 
         return $orders;
     }

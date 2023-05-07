@@ -3,15 +3,21 @@
         {{ $order->id }}
     </td>
     <td class="js-container-order-field" name="name">
-        <input class="js-edit-order-field js-enabled-field order-field" type="text" name="name"
-            value="{{ $order->name }}" disabled>
+        {{ $order->name }}
     </td>
     <td class="js-container-order-field" name="price">
         {{ $order->price }}
     </td>
     <td class="js-container-order-field" name="price">
-        <input class="js-edit-order-field js-enabled-field order-field" type="text" name="status"
-            value="{{ $order->order->status }}" disabled>
+        <select class="js-edit-order-field" name="status">
+            @foreach ($statuses as $status)
+                @if ($order->order->status == $status)
+                    <option value="{{ $status }}" selected>{{ $status }}</option>
+                @else
+                    <option value="{{ $status }}">{{ $status }}</option>
+                @endif
+            @endforeach
+        </select>
     </td>
     <td>
         <button class="js-delete-order">{{ __('Delete') }}</button>

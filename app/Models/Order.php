@@ -17,6 +17,13 @@ class Order extends Model
 
     public static $statuses = ['created', 'inProgress', 'done'];
 
+    public static function edit($orderId, $fieldName, $value)
+    {
+        return Order::where('id', $orderId)->update([
+            $fieldName => $value,
+        ]);
+    }
+
     public static function createOrder($status, $userId, $serviceId)
     {
         return Order::create([

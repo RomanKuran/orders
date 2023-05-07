@@ -1,5 +1,13 @@
 @extends('admin.layouts.app')
 
+@push('scripts')
+    @vite(['resources/js/admin/pages/orders/orders.js'])
+
+    <script>
+        let route_edit_order = "{{ route('admin.editOrder') }}";
+    </script>
+@endpush
+
 @section('content')
     <div class="container">
         <b>To edit a order - double click on the field, edit and click outside the field!!!!!!</b>
