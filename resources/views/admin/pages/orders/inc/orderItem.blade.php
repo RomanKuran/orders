@@ -1,6 +1,6 @@
-<tr class="js-order-item" data-order-id="{{ $order->id }}">
+<tr class="js-order-item" data-order-id="{{ $order->order->id }}">
     <td class="js-container-order-field" name="id">
-        {{ $order->id }}
+        {{ $order->order->id }}
     </td>
     <td class="js-container-order-field" name="name">
         {{ $order->name }}
