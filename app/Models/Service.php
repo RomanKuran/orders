@@ -28,4 +28,9 @@ class Service extends Model
             'price' => $price
         ]);
     }
+
+    public function order()
+    {
+        return $this->hasOne('App\Models\Order', 'service_id', 'id');
+    }
 }

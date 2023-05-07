@@ -11,3 +11,5 @@ Route::get('/services',  [App\Http\Controllers\Admin\Pages\Services\ServicesCont
 Route::put('/services/edit',  [App\Http\Controllers\Admin\Pages\Services\Edit\EditServiceController::class, 'edit'])->name('admin.editService');
 Route::delete('/services/delete',  [App\Http\Controllers\Admin\Pages\Services\Delete\DeleteServiceController::class, 'delete'])->name('admin.deleteService');
 Route::post('/services/create',  [App\Http\Controllers\Admin\Pages\Services\Create\CreateServiceController::class, 'create'])->name('admin.createService');
+
+Route::get('/orders/{userId}/{status?}',  [App\Http\Controllers\Admin\Pages\Orders\OrdersController::class, 'orders'])->name('admin.orders');

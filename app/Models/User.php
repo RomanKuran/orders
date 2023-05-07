@@ -67,4 +67,10 @@ class User extends Authenticatable
             $fieldName => $value,
         ]);
     }
+
+
+    public function services()
+    {
+        return $this->belongsToMany('App\Models\Service', "orders");
+    }
 }
