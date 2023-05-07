@@ -5,6 +5,8 @@
 
     <script>
         let route_edit_order = "{{ route('admin.editOrder') }}";
+        let route_delete_order = "{{ route('admin.deleteOrder') }}";
+
     </script>
 @endpush
 

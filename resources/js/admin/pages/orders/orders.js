@@ -9,6 +9,15 @@ $(document).ready(function (e) {
         editOrder(order_id, field_name, value);
     });
     // ----
+
+    // event delete order
+    $(document).on('click', '.js-delete-order', function () {
+        let field = $(this);
+        let order_id = field.parents('tr').attr('data-order-id');
+
+        deleteOrder(order_id);
+    });
+    // ----
 })
 
 // function edit order
@@ -30,6 +39,26 @@ function editOrder(order_id, field_name, value) {
             alert(result.responseJSON.message);
         }
 
+    });
+}
+// ----
+
+// function delete order
+function deleteOrder(order_id) {
+    $.ajax({
+        type: "DELETE",
+        url: route_delete_order,
+        dataType: 'json',
+        data: {
+            order_id: order_id,
+            _token: $('meta[name="csrf-token"]').attr('content')
+        },
+        success: function (result) {
+            $(`tr[data-order-id=${order_id}]`).remove();
+        },
+        error: function (result) {
+            alert(result.responseJSON.message);
+        }
     });
 }
 // ----
