@@ -11,7 +11,12 @@
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
             <!-- Left Side Of Navbar -->
             <ul class="navbar-nav me-auto">
-
+                <b>{{ __('Api:') }}</b>
+                @if (isset($currencies))
+                    @foreach ($currencies as $key => $currency)
+                        {{ $key }}: {{ $currency }}
+                    @endforeach
+                @endif
             </ul>
 
             <!-- Right Side Of Navbar -->
