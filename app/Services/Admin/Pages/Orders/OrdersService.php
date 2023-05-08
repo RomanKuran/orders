@@ -7,10 +7,16 @@ use App\Models\User;
 
 class OrdersService
 {
-    public static function orders($userId)
+    public static function orders($userId, $status = null)
     {
+        $orderWhere = [];
+
+        if (isset($status)) {
+            $orderWhere = ['status' => $status];
+        }
+
         $user = User::where('id', $userId)->first();
-        $orders = $user->orders()->orderBy('orders.id', 'DESC')->with('service')->paginate(10);
+        $orders = $user->orders()->where($orderWhere)->orderBy('orders.id', 'DESC')->with('service')->paginate(10);
 
         $services = Service::get();
 

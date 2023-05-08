@@ -31,6 +31,8 @@
                 <th scope="col">
                     {{ __('is_admin') }}
                 </th>
+                <th scope="col"></th>
+                <th scope="col"></th>
             </thead>
 
             @include('admin.pages.users.inc.userItemCreate')

@@ -18,6 +18,8 @@
         <button class="js-delete-user">{{ __('Delete') }}</button>
     </td>
     <td>
-        <a href="{{ route('admin.orders', ['userId' => $user->id]) }}">{{ __('Orders') }}</a>
+        <button>
+            <a class="full-size" href="{{ route('admin.orders', ['userId' => $user->id]) }}">{{ __('Orders') }}</a>
+        </button>
     </td>
 </tr>

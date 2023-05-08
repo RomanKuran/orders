@@ -22,7 +22,7 @@ class OrdersController extends Controller
 
     public function orders($userId, $status = null)
     {
-        $orders = OrdersService::orders($userId);
+        $orders = OrdersService::orders($userId, $status);
         $statuses = Order::$statuses;
 
         $services = $orders['services'];

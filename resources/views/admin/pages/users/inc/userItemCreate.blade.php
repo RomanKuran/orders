@@ -14,4 +14,5 @@
     <td>
         <button class="js-create-user">{{ __('Create') }}</button>
     </td>
+    <td></td>
 </tr>

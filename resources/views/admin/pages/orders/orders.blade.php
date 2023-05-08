@@ -12,6 +12,7 @@
 
 @section('content')
     <div class="container">
+        @include('admin.pages.orders.inc.filter')
         @include('admin.pages.orders.inc.orderItemCreate')
         <b>To edit a order - double click on the field, edit and click outside the field!!!!!!</b>
         <table class="js-orders-table table table-striped">
