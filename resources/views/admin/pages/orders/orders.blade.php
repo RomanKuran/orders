@@ -6,12 +6,13 @@
     <script>
         let route_edit_order = "{{ route('admin.editOrder') }}";
         let route_delete_order = "{{ route('admin.deleteOrder') }}";
-
+        let route_create_order = "{{ route('admin.createOrder') }}";
     </script>
 @endpush
 
 @section('content')
     <div class="container">
+        @include('admin.pages.orders.inc.orderItemCreate')
         <b>To edit a order - double click on the field, edit and click outside the field!!!!!!</b>
         <table class="js-orders-table table table-striped">
             <thead class="thead-dark">
@@ -28,8 +29,6 @@
                     {{ __('status') }}
                 </th>
             </thead>
-
-            @include('admin.pages.orders.inc.orderItemCreate')
 
             @foreach ($orders as $order)
                 @include('admin.pages.orders.inc.orderItem')

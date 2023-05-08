@@ -13,7 +13,7 @@ class OrdersController extends Controller
     protected function validator(array $data)
     {
         $statuses = Order::$statuses;
-        
+
         return Validator::make($data, [
             'user_id' => ['required', 'exists:users,id'],
             'status' => ['nullable', Rule::in($statuses)]
@@ -25,6 +25,9 @@ class OrdersController extends Controller
         $orders = OrdersService::orders($userId);
         $statuses = Order::$statuses;
 
-        return view('admin.pages.orders.orders', compact('orders', 'statuses'));
+        $services = $orders['services'];
+        $orders = $orders['orders'];
+
+        return view('admin.pages.orders.orders', compact('orders', 'statuses', 'services', 'userId'));
     }
 }

@@ -18,7 +18,40 @@ $(document).ready(function (e) {
         deleteOrder(order_id);
     });
     // ----
+
+    // event create order
+    $(document).on('change', '.js-create-order', function () {
+        let service = $(this);
+        let service_id = service.val();
+        let user_id = service.attr('data-user-id');
+
+        createOrder(service_id, user_id);
+    });
+    // ----
+
+
 })
+
+// function create order
+function createOrder(service_id, user_id) {
+    $.ajax({
+        type: "post",
+        url: route_create_order,
+        dataType: 'json',
+        data: {
+            service_id: service_id,
+            user_id: user_id,
+            _token: $('meta[name="csrf-token"]').attr('content')
+        },
+        success: function (result) {
+            location.reload();
+        },
+        error: function (result) {
+            alert(result.responseJSON.message);
+        }
+    });
+}
+// ----
 
 // function edit order
 function editOrder(order_id, field_name, value) {

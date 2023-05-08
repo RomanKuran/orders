@@ -1,17 +1,17 @@
-<tr class="js-order-item" data-order-id="{{ $order->order->id }}">
+<tr class="js-order-item" data-order-id="{{ $order->id }}">
     <td class="js-container-order-field" name="id">
-        {{ $order->order->id }}
+        {{ $order->id }}
     </td>
     <td class="js-container-order-field" name="name">
-        {{ $order->name }}
+        {{ $order->service->name }}
     </td>
     <td class="js-container-order-field" name="price">
-        {{ $order->price }}
+        {{ $order->service->price }}
     </td>
     <td class="js-container-order-field" name="price">
         <select class="js-edit-order-field" name="status">
             @foreach ($statuses as $status)
-                @if ($order->order->status == $status)
+                @if ($order->status == $status)
                     <option value="{{ $status }}" selected>{{ $status }}</option>
                 @else
                     <option value="{{ $status }}">{{ $status }}</option>

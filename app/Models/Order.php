@@ -32,4 +32,9 @@ class Order extends Model
             'service_id' => $serviceId
         ]);
     }
+
+    public function service()
+    {
+        return $this->hasOne('App\Models\Service', 'id', 'service_id');
+    }
 }

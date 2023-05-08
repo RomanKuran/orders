@@ -68,9 +68,13 @@ class User extends Authenticatable
         ]);
     }
 
-
     public function services()
     {
         return $this->belongsToMany('App\Models\Service', "orders");
+    }
+
+    public function orders()
+    {
+        return $this->hasMany('App\Models\Order', 'user_id', 'id');
     }
 }

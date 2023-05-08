@@ -15,3 +15,5 @@ Route::post('/services/create',  [App\Http\Controllers\Admin\Pages\Services\Crea
 Route::get('/orders/{userId}/{status?}',  [App\Http\Controllers\Admin\Pages\Orders\OrdersController::class, 'orders'])->name('admin.orders');
 Route::put('/orders/edit',  [App\Http\Controllers\Admin\Pages\Orders\Edit\EditOrderController::class, 'edit'])->name('admin.editOrder');
 Route::delete('/orders/delete',  [App\Http\Controllers\Admin\Pages\Orders\Delete\DeleteOrderController::class, 'delete'])->name('admin.deleteOrder');
+Route::post('/orders/create',  [App\Http\Controllers\Admin\Pages\Orders\Create\CreateOrderController::class, 'create'])->name('admin.createOrder');
+
